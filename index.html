@@ -1,446 +1,723 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="A love letter from Zana to Sara 💖" />
-<title>For My Sara 💖 From Zana</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💖%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet" />
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{font-family:'Quicksand',system-ui,sans-serif;color:#4a1942;background:linear-gradient(135deg,#fff1f5 0%,#ffe4ec 50%,#f3e8ff 100%);overflow-x:hidden;scroll-behavior:smooth}
-  .script{font-family:'Dancing Script',cursive}
-  .gradient-text{background:linear-gradient(90deg,#ec4899,#f43f5e,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent}
-  /* Floating hearts background */
-  .bg-hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
-  .bg-hearts span{position:absolute;font-size:22px;opacity:.5;animation:floatUp linear infinite}
-  @keyframes floatUp{0%{transform:translateY(100vh) rotate(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) rotate(360deg);opacity:0}}
-  /* Layout */
-  main{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:40px 20px 80px}
-  section{margin:60px 0}
-  .card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border:1px solid rgba(244,114,182,.25);border-radius:28px;padding:32px;box-shadow:0 20px 50px -20px rgba(236,72,153,.25)}
-  /* Hero */
-  .hero{text-align:center;padding:60px 20px 20px}
-  .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;padding:8px 18px;border-radius:999px;box-shadow:0 8px 20px -10px rgba(236,72,153,.4);font-weight:600;color:#be185d;margin-bottom:24px}
-  .hero h1{font-size:clamp(42px,8vw,84px);line-height:1.05;margin-bottom:16px}
-  .hero p.sub{font-size:clamp(20px,3vw,28px);color:#be185d;font-weight:500}
-  .hero .big-heart{font-size:80px;animation:beat 1.2s ease-in-out infinite;display:inline-block}
-  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-  .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-  .btn{padding:14px 28px;border-radius:999px;font-weight:700;font-size:16px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-  .btn:active{transform:scale(.96)}
-  .btn-primary{background:linear-gradient(90deg,#ec4899,#f43f5e);color:#fff;box-shadow:0 10px 25px -8px rgba(236,72,153,.6)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{background:#fff;color:#be185d;border:2px solid #fbcfe8}
-  /* Letter */
-  .letter p{font-size:18px;line-height:1.8;margin-bottom:14px;color:#500724}
-  .letter .greet{font-size:26px;font-weight:700;color:#9d174d;margin-bottom:16px}
-  .letter .sign{text-align:right;font-size:22px;font-weight:700;color:#be185d;margin-top:20px;padding-top:16px;border-top:2px dashed #fbcfe8}
-  /* Favorites grid */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
-  .fav{background:linear-gradient(135deg,#fff,#fce7f3);border-radius:20px;padding:22px;text-align:center;border:1px solid #fbcfe8;transition:transform .2s}
-  .fav:hover{transform:translateY(-4px) rotate(-1deg)}
-  .fav .ico{font-size:40px;display:block;margin-bottom:8px}
-  .fav .lbl{font-weight:700;color:#9d174d}
-  /* Countdown */
-  .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
-  .cd-box{background:linear-gradient(135deg,#ec4899,#a855f7);color:#fff;border-radius:18px;padding:16px 8px;text-align:center}
-  .cd-box .n{font-size:32px;font-weight:800;display:block}
-  .cd-box .l{font-size:12px;opacity:.9;text-transform:uppercase;letter-spacing:1px}
-  /* Quiz */
-  .quiz-q{font-size:22px;text-align:center;font-weight:600;color:#500724;margin:20px 0 30px;min-height:60px}
-  .quiz-btns{position:relative;display:flex;gap:16px;justify-content:center;align-items:center;min-height:80px;flex-wrap:wrap}
-  .yes-btn{background:linear-gradient(90deg,#ec4899,#f43f5e);color:#fff;padding:14px 36px;border-radius:999px;font-weight:700;font-size:18px;border:none;cursor:pointer;box-shadow:0 10px 25px -8px rgba(236,72,153,.6);transition:transform .15s}
-  .yes-btn:hover{transform:scale(1.05)}
-  .no-btn{background:#e5e7eb;color:#6b7280;padding:14px 36px;border-radius:999px;font-weight:700;font-size:18px;border:none;cursor:not-allowed;transition:all .2s}
-  .progress{height:8px;background:#fce7f3;border-radius:999px;overflow:hidden;margin-bottom:20px}
-  .progress > div{height:100%;background:linear-gradient(90deg,#ec4899,#a855f7);transition:width .4s}
-  /* Memory game */
-  .mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
-  .mem-card{aspect-ratio:1;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:36px;background:linear-gradient(135deg,#fbcfe8,#f9a8d4);cursor:pointer;transition:transform .3s,background .3s;border:none;user-select:none}
-  .mem-card.flip{background:linear-gradient(135deg,#ec4899,#a855f7);transform:rotateY(180deg)}
-  .mem-card.match{background:linear-gradient(135deg,#86efac,#4ade80);opacity:.7;cursor:default}
-  .mem-card .back{transform:rotateY(180deg)}
-  .mem-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
-  /* Hug/Kiss counter */
-  .counters{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .counter-btn{padding:30px 10px;border-radius:22px;border:none;cursor:pointer;color:#fff;font-weight:700;font-size:18px;transition:transform .1s;box-shadow:0 10px 25px -10px rgba(0,0,0,.3)}
-  .counter-btn:active{transform:scale(.92)}
-  .hug-btn{background:linear-gradient(135deg,#fb923c,#f43f5e)}
-  .kiss-btn{background:linear-gradient(135deg,#ec4899,#a855f7)}
-  .counter-btn .emo{font-size:48px;display:block;margin-bottom:6px}
-  .count-num{font-size:36px;font-weight:800;text-align:center;margin-top:10px;color:#9d174d}
-  /* Heart catcher */
-  .catcher{position:relative;height:360px;background:linear-gradient(180deg,#fce7f3,#fbcfe8);border-radius:22px;overflow:hidden;border:2px dashed #f9a8d4;cursor:crosshair}
-  .falling{position:absolute;font-size:32px;user-select:none;animation:fall linear forwards}
-  @keyframes fall{to{transform:translateY(400px)}}
-  .catch-score{position:absolute;top:10px;left:12px;background:#fff;padding:6px 14px;border-radius:999px;font-weight:700;color:#be185d;z-index:2}
-  .catch-time{position:absolute;top:10px;right:12px;background:#fff;padding:6px 14px;border-radius:999px;font-weight:700;color:#be185d;z-index:2}
-  /* Confetti */
-  .confetti{position:fixed;top:-30px;font-size:28px;pointer-events:none;z-index:999;animation:confettiFall linear forwards}
-  @keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg)}}
-  /* Footer */
-  footer{text-align:center;padding:40px 20px;color:#be185d;font-size:14px}
-  footer .emojis{font-size:24px;margin-top:10px;letter-spacing:6px}
-  /* Success screen */
-  .success{background:linear-gradient(135deg,#ec4899,#f43f5e);color:#fff;text-align:center;padding:40px 20px;border-radius:28px;box-shadow:0 20px 50px -20px rgba(236,72,153,.6)}
-  .success h2{font-size:36px;margin-bottom:12px}
-  .success .big{font-size:72px;margin-bottom:16px}
-  h2.section-title{font-size:32px;text-align:center;margin-bottom:8px;color:#500724}
-  p.section-sub{text-align:center;color:#be185d;margin-bottom:24px}
-  @media (max-width:500px){.mem-grid{grid-template-columns:repeat(3,1fr)}.countdown{grid-template-columns:repeat(2,1fr)}}
-</style>
-</head>
-<body>
-<div class="bg-hearts" id="bgHearts"></div>
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="badge">🎂 Born September 14, 2003 • Biology Queen 👑</div>
-    <div class="big-heart">💖</div>
-    <h1 class="script gradient-text">Dear Sara,<br>I Love You</h1>
-    <p class="sub">Forever & always — your Zana 💕</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="#quiz">Play our love game 💘</a>
-      <a class="btn btn-ghost" href="#games">Fun & games 🎮</a>
-    </div>
-  </section>
-  <!-- LOVE LETTER -->
-  <section>
-    <h2 class="section-title script">My Love Letter 💌</h2>
-    <p class="section-sub">Every word is true, Sara</p>
-    <div class="card letter">
-      <p class="greet script">My beautiful Sara with the most gorgeous curly hair 🌸</p>
-      <p>I love you so, so much. I miss you every single moment of every single day. Every second without you feels like forever.</p>
-      <p>I love spending every moment with you. I love kissing you so much 💋 — your lips are my favorite place in the whole world. And hugs? I want to hug you every time I see you, hold you close, and never let go 🤗.</p>
-      <p>I love that you're a biology student 🔬 — you're so smart and I'm proud of you. I love that you love coffee so much ☕ (I'll make you one every morning). I love that you love croissants 🥐 — we'll share them together.</p>
-      <p>I even love that you get cold in the middle of summer 🥶 — it gives me an excuse to hold you tighter and warm you up.</p>
-      <p>Happy early birthday, my September 14 baby 🎂. You are my everything.</p>
-      <p class="sign script">Yours forever,<br>Zana ❤️</p>
-    </div>
-  </section>
-  <!-- SARA'S FAVORITES -->
-  <section>
-    <h2 class="section-title">Things I Adore About You 🌟</h2>
-    <p class="section-sub">Every little detail makes me love you more</p>
-    <div class="grid">
-      <div class="fav"><span class="ico">☕</span><div class="lbl">Coffee Addict</div></div>
-      <div class="fav"><span class="ico">🥐</span><div class="lbl">Croissant Lover</div></div>
-      <div class="fav"><span class="ico">🔬</span><div class="lbl">Biology Queen</div></div>
-      <div class="fav"><span class="ico">🌀</span><div class="lbl">Curly Hair Angel</div></div>
-      <div class="fav"><span class="ico">🥶</span><div class="lbl">Cold in Summer</div></div>
-      <div class="fav"><span class="ico">🎂</span><div class="lbl">Sept 14, 2003</div></div>
-      <div class="fav"><span class="ico">💋</span><div class="lbl">Best Kisses</div></div>
-      <div class="fav"><span class="ico">🤗</span><div class="lbl">Warmest Hugs</div></div>
-    </div>
-  </section>
-  <!-- BIRTHDAY COUNTDOWN -->
-  <section>
-    <h2 class="section-title script">Countdown to Your Birthday 🎂</h2>
-    <p class="section-sub">September 14 — the best day of the year</p>
-    <div class="card">
-      <div class="countdown" id="countdown">
-        <div class="cd-box"><span class="n" id="cd-d">0</span><span class="l">Days</span></div>
-        <div class="cd-box"><span class="n" id="cd-h">0</span><span class="l">Hours</span></div>
-        <div class="cd-box"><span class="n" id="cd-m">0</span><span class="l">Minutes</span></div>
-        <div class="cd-box"><span class="n" id="cd-s">0</span><span class="l">Seconds</span></div>
-      </div>
-    </div>
-  </section>
-  <!-- LOVE QUIZ -->
-  <section id="quiz">
-    <h2 class="section-title">Love Quiz 💕</h2>
-    <p class="section-sub">Try saying no... I dare you 😏</p>
-    <div class="card" id="quizCard">
-      <div class="progress"><div id="quizProg" style="width:20%"></div></div>
-      <div style="text-align:center;color:#be185d;font-weight:600" id="quizStep">Question 1 of 5</div>
-      <div class="quiz-q" id="quizQ">Do you love your boyfriend Zana? 💕</div>
-      <div class="quiz-btns">
-        <button class="yes-btn" id="yesBtn">YES 💖</button>
-        <button class="no-btn" id="noBtn">No 😢</button>
-      </div>
-      <p style="text-align:center;margin-top:18px;color:#f472b6;font-size:14px">Psst... the "No" button doesn't work. You already know the answer 😉</p>
-    </div>
-  </section>
-  <!-- GAMES -->
-  <section id="games">
-    <h2 class="section-title">Games Just for Us 🎮</h2>
-    <p class="section-sub">Because love should be fun</p>
-    <!-- Memory -->
-    <div class="card" style="margin-bottom:24px">
-      <div class="mem-head">
-        <div>
-          <h3 style="color:#500724;font-size:22px">🧠 Memory Match</h3>
-          <p style="color:#be185d;font-size:14px">Moves: <span id="memMoves">0</span> • Matched: <span id="memMatched">0</span>/6</p>
-        </div>
-        <button class="btn btn-ghost" id="memReset">Reset</button>
-      </div>
-      <div class="mem-grid" id="memGrid"></div>
-    </div>
-    <!-- Hug & Kiss counters -->
-    <div class="card" style="margin-bottom:24px">
-      <h3 style="text-align:center;color:#500724;font-size:22px;margin-bottom:16px">Send Sara Love 💝</h3>
-      <div class="counters">
-        <div>
-          <button class="counter-btn hug-btn" id="hugBtn"><span class="emo">🤗</span>HUG HER</button>
-          <div class="count-num" id="hugCount">0</div>
-          <p style="text-align:center;color:#f472b6;font-size:13px">hugs sent</p>
-        </div>
-        <div>
-          <button class="counter-btn kiss-btn" id="kissBtn"><span class="emo">💋</span>KISS HER</button>
-          <div class="count-num" id="kissCount">0</div>
-          <p style="text-align:center;color:#f472b6;font-size:13px">kisses sent</p>
-        </div>
-      </div>
-      <p style="text-align:center;margin-top:16px;color:#be185d;font-size:14px">Every one of these is for my beautiful curly-haired Sara 🌸</p>
-    </div>
-    <!-- Heart catcher -->
-    <div class="card">
-      <div class="mem-head">
-        <div>
-          <h3 style="color:#500724;font-size:22px">💘 Catch the Hearts!</h3>
-          <p style="color:#be185d;font-size:14px">Tap the falling hearts in 20 seconds</p>
-        </div>
-        <button class="btn btn-primary" id="catchStart">Start</button>
-      </div>
-      <div class="catcher" id="catcher">
-        <div class="catch-score">💖 <span id="catchScore">0</span></div>
-        <div class="catch-time">⏱ <span id="catchTime">20</span>s</div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <p>Made with endless love by <b>Zana</b> for <b>Sara</b> 💖</p>
-    <p style="margin-top:6px">September 14 forever in my heart</p>
-    <div class="emojis">💕  ☕ 💋 🤗 🌸</div>
-  </footer>
-</main>
-<script>
-/* ---------- Floating background hearts ---------- */
-(function(){
-  const bg = document.getElementById('bgHearts');
-  const emo = ['💕','💖','💗','💓','','💘'];
-  for(let i=0;i<20;i++){
-    const s = document.createElement('span');
-    s.textContent = emo[i%emo.length];
-    s.style.left = Math.random()*100+'%';
-    s.style.animationDuration = (8+Math.random()*10)+'s';
-    s.style.animationDelay = (Math.random()*10)+'s';
-    s.style.fontSize = (16+Math.random()*22)+'px';
-    bg.appendChild(s);
+import React, { useEffect, useRef, useState } from 'react';
+
+// ==========================================
+// 1. CONFIGURATION & CONSTANTS
+// ==========================================
+
+const COLORS = ['#ff4d8d', '#ff7eb3', '#ffb3c6', '#ffd700', '#ff6b9d', '#fff5f7', '#ff9eb5'];
+
+const RAIN_EMOJIS = ['💖', '💕', '💗', '💝', '🌸', '✨', '💘', '🥐', '☕', '🧬'];
+
+const CATCHER_EMOJIS = ['💖', '💕', '💗', '💝', '💘', '🌸', '✨'];
+
+const ZANA_RESPONSES = [
+  "Sending you the biggest, warmest hug right now 🤗💖",
+  "Take a deep breath, my love. I'm here, always 💕",
+  "A cup of hot coffee is on its way to you ☕💝",
+  "Close your eyes — imagine my arms around you 🥰",
+  "It's okay to be tired, Sara. Rest, my queen 👑",
+  "Text me when you read this. I want to hear you say hi 💗",
+  "Watch a cozy show, eat a croissant, and forget the world 🥐✨",
+  "If I could, I'd carry you home right now 🏠💖",
+  "You're doing amazing, my biology girl 🧬💕",
+  "One kiss on the forehead coming up... 💋",
+];
+
+const FORTUNES = [
+  "Zana is thinking about you right now 💭💖",
+  "A hug from Zana is on its way to you 🤗",
+  "You will smile very soon — it will be about him 😊",
+  "Sara, you are the most beautiful girl in the world 💕",
+  "He misses you more than words can say 🥺",
+  "Today is a perfect day for a kiss 💋",
+  "Your smile just made Zana's whole day better ✨",
+  "He counted his love for you — it has no end ♾️💖",
+  "Sara is loved. Sara is cherished. Sara is everything 🌸",
+  "A surprise coffee date is in your future ☕💝",
+  "The next time you sleep, dream of him 💫",
+  "He will tell you he loves you 1000 more times before the year ends 💗",
+];
+
+const CARE_ITEMS = [
+  { emoji: '🧣', label: 'A warm scarf', message: 'So your neck never gets cold, my love' },
+  { emoji: '☕', label: 'Hot coffee', message: 'Your favorite — to warm your hands and soul' },
+  { emoji: '🌡️', label: 'Cozy blanket', message: 'To wrap you up while I am not there' },
+  { emoji: '💊', label: 'Vitamin C', message: 'Because Sara catches cold every month, even in summer 🥺' },
+  { emoji: '🍵', label: 'Honey & lemon tea', message: 'For when your throat feels scratchy' },
+  { emoji: '🤗', label: 'My arms', message: 'The warmest place in the whole world' },
+];
+
+const MOODS = [
+  { emoji: '🥰', label: 'Happy', color: 'from-yellow-100 to-pink-200' },
+  { emoji: '😴', label: 'Sleepy', color: 'from-indigo-100 to-purple-200' },
+  { emoji: '😢', label: 'Sad', color: 'from-blue-100 to-cyan-200' },
+  { emoji: '🤒', label: 'Sick', color: 'from-green-100 to-emerald-200' },
+  { emoji: '😤', label: 'Stressed', color: 'from-red-100 to-orange-200' },
+  { emoji: '🥐', label: 'Hungry', color: 'from-amber-100 to-yellow-200' },
+  { emoji: '😍', label: 'In love', color: 'from-pink-100 to-rose-200' },
+  { emoji: '🧠', label: 'Studying', color: 'from-violet-100 to-indigo-200' },
+];
+
+// Helper for Birthday Countdown calculations
+function timeUntilBirthday() {
+  const now = new Date();
+  let year = now.getFullYear();
+  let target = new Date(year, 8, 14, 0, 0, 0); // 14 September
+  if (now > target) {
+    target = new Date(year + 1, 8, 14, 0, 0, 0);
   }
-})();
-/* ---------- Confetti burst ---------- */
-function confettiBurst(){
-  const emos=['💕','🌸','','☕','💖','💋','✨'];
-  for(let i=0;i<40;i++){
-    const c=document.createElement('div');
-    c.className='confetti';
-    c.textContent=emos[i%emos.length];
-    c.style.left=Math.random()*100+'vw';
-    c.style.animationDuration=(2+Math.random()*2)+'s';
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),4000);
-  }
+  const diff = target.getTime() - now.getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  return { days, hours, minutes, seconds, total: diff };
 }
-/* ---------- Birthday countdown to Sept 14 ---------- */
-(function(){
-  function tick(){
-    const now=new Date();
-    let y=now.getFullYear();
-    let target=new Date(y,8,14,0,0,0); // month 8 = Sept
-    if(target<now){target=new Date(y+1,8,14,0,0,0)}
-    const diff=target-now;
-    const d=Math.floor(diff/86400000);
-    const h=Math.floor(diff/3600000)%24;
-    const m=Math.floor(diff/60000)%60;
-    const s=Math.floor(diff/1000)%60;
-    document.getElementById('cd-d').textContent=d;
-    document.getElementById('cd-h').textContent=h;
-    document.getElementById('cd-m').textContent=m;
-    document.getElementById('cd-s').textContent=s;
-  }
-  tick();setInterval(tick,1000);
-})();
-/* ---------- Love Quiz with runaway NO button ---------- */
-(function(){
-  const questions=[
-    "Do you love your boyfriend Zana? 💕",
-    "Do you miss him as much as he misses you? 🥺",
-    "Do you want endless hugs and kisses? 🤗💋",
-    "Is Zana the luckiest guy in the world to have you? 🌟",
-    "Will you be his forever and ever? 💍"
-  ];
-  let idx=0;
-  const qEl=document.getElementById('quizQ');
-  const stepEl=document.getElementById('quizStep');
-  const progEl=document.getElementById('quizProg');
-  const yesBtn=document.getElementById('yesBtn');
-  const noBtn=document.getElementById('noBtn');
-  const card=document.getElementById('quizCard');
-  function render(){
-    qEl.textContent=questions[idx];
-    stepEl.textContent='Question '+(idx+1)+' of '+questions.length;
-    progEl.style.width=(((idx+1)/questions.length)*100)+'%';
-    noBtn.style.position='';noBtn.style.left='';noBtn.style.top='';
-  }
-  function runAway(){
-    const rect=card.getBoundingClientRect();
-    const maxX=rect.width-noBtn.offsetWidth-40;
-    const maxY=140;
-    const x=Math.random()*maxX;
-    const y=Math.random()*maxY;
-    noBtn.style.position='absolute';
-    noBtn.style.left=x+'px';
-    noBtn.style.top=(60+y)+'px';
-    // tiny taunt
-    const taunts=["Nope 😏","Can't click me!","Try again 💕","No is not an option!","Hehe 🥰"];
-    noBtn.textContent=taunts[Math.floor(Math.random()*taunts.length)];
-  }
-  noBtn.addEventListener('mouseenter',runAway);
-  noBtn.addEventListener('mouseover',runAway);
-  noBtn.addEventListener('touchstart',function(e){e.preventDefault();runAway();},{passive:false});
-  noBtn.addEventListener('click',function(e){e.preventDefault();runAway();});
-  yesBtn.addEventListener('click',function(){
-    yesBtn.textContent='💖 YES! ';
-    confettiBurst();
-    setTimeout(()=>{
-      if(idx<questions.length-1){
-        idx++;render();yesBtn.textContent='YES 💖';
-      } else {
-        // success screen
-        card.outerHTML='<div class="success"><div class="big">🎉💕🎉</div><h2 class="script">You said YES to everything!</h2><p style="font-size:20px;opacity:.95;margin-top:8px">Just like I knew you would, my perfect Sara.<br>I love you endlessly! — Zana 💖</p></div>';
-        confettiBurst();
-        setTimeout(confettiBurst,800);
-      }
-    },700);
-  });
-  render();
-})();
-/* ---------- Memory Match Game ---------- */
-(function(){
-  const emojis=['☕','🥐','🔬','🌀','💋','🤗'];
-  const grid=document.getElementById('memGrid');
-  const movesEl=document.getElementById('memMoves');
-  const matchedEl=document.getElementById('memMatched');
-  const resetBtn=document.getElementById('memReset');
-  let deck=[],flipped=[],matched=0,moves=0,lock=false;
-  function shuffle(a){return a.sort(()=>Math.random()-0.5)}
-  function build(){
-    grid.innerHTML='';
-    deck=shuffle([...emojis,...emojis].map((e,i)=>({e,i})));
-    flipped=[];matched=0;moves=0;lock=false;
-    movesEl.textContent=0;matchedEl.textContent=0;
-    deck.forEach((c,idx)=>{
-      const b=document.createElement('button');
-      b.className='mem-card';
-      b.dataset.idx=idx;
-      b.textContent='?';
-      b.addEventListener('click',()=>flip(idx,b));
-      grid.appendChild(b);
-    });
-  }
-  function flip(idx,el){
-    if(lock||flipped.length===2||flipped.find(f=>f.idx===idx)||el.classList.contains('match'))return;
-    el.classList.add('flip');
-    el.innerHTML='<span class="back">'+deck[idx].e+'</span>';
-    flipped.push({idx,el,emoji:deck[idx].e});
-    if(flipped.length===2){
-      moves++;movesEl.textContent=moves;lock=true;
-      const [a,b]=flipped;
-      if(a.emoji===b.emoji){
-        setTimeout(()=>{
-          a.el.classList.add('match');b.el.classList.add('match');
-          matched++;matchedEl.textContent=matched;
-          flipped=[];lock=false;
-          if(matched===emojis.length){
-            setTimeout(()=>{confettiBurst();alert('🎉 You found all our memories! Moves: '+moves+'\nJust like how we found each other 💕');},300);
+
+// ==========================================
+// 2. BACKGROUND ANIMATIONS / OVERLAYS
+// ==========================================
+
+export function HeartRain({ count = 30, active = true }: { count?: number; active?: boolean }) {
+  const [hearts, setHearts] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (!active) return;
+    const arr = Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      size: 20 + Math.random() * 30,
+      duration: 6 + Math.random() * 6,
+      delay: Math.random() * 5,
+      drift: (Math.random() - 0.5) * 200,
+      emoji: RAIN_EMOJIS[Math.floor(Math.random() * RAIN_EMOJIS.length)],
+    }));
+    setHearts(arr);
+  }, [count, active]);
+
+  if (!active) return null;
+
+  return (
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      {hearts.map((h) => (
+        <div
+          key={h.id}
+          className="heart-float absolute"
+          style={{
+            left: `${h.left}%`,
+            fontSize: `${h.size}px`,
+            animationDuration: `${h.duration}s`,
+            animationDelay: `${h.delay}s`,
+            ['--drift' as any]: `${h.drift}px`,
+            bottom: 0,
+          }}
+        >
+          {h.emoji}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function Confetti({ active, count = 80 }: { active: boolean; count?: number }) {
+  const [pieces, setPieces] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (!active) return;
+    const arr = Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      duration: 3 + Math.random() * 3,
+      delay: Math.random() * 2,
+      size: 6 + Math.random() * 10,
+      rotate: Math.random() * 360,
+    }));
+    setPieces(arr);
+    const timer = setTimeout(() => setPieces([]), 8000);
+    return () => clearTimeout(timer);
+  }, [active, count]);
+
+  if (!active || pieces.length === 0) return null;
+
+  return (
+    <div className="pointer-events-none fixed inset-0 z-[9999]">
+      {pieces.map((p) => (
+        <div
+          key={p.id}
+          className="confetti-piece"
+          style={{
+            left: `${p.left}%`,
+            backgroundColor: p.color,
+            width: `${p.size}px`,
+            height: `${p.size * 1.4}px`,
+            animationDuration: `${p.duration}s`,
+            animationDelay: `${p.delay}s`,
+            transform: `rotate(${p.rotate}deg)`,
+            borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+export function MissingMeter() {
+  const [missingLevel, setMissingLevel] = useState(95);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setMissingLevel((m) => {
+        const change = Math.random() * 4 - 1.5;
+        const next = Math.max(60, Math.min(100, m + change));
+        return next;
+      });
+    }, 1500);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="glass fixed bottom-4 right-4 z-40 max-w-xs rounded-2xl p-3 shadow-xl">
+      <div className="flex items-center gap-2">
+        <div className="text-3xl wiggle">🥺</div>
+        <div className="flex-1">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-pink-700">Zana misses Sara</span>
+            <span className="text-xs font-bold text-rose-600">{Math.round(missingLevel)}%</span>
+          </div>
+          <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-pink-100">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-rose-400 to-pink-500 transition-all duration-1000"
+              style={{ width: `${missingLevel}%` }}
+            />
+          </div>
+        </div>
+      </div>
+      <p className="mt-1 text-center text-[10px] text-pink-500">always off the charts 💔</p>
+    </div>
+  );
+}
+
+// ==========================================
+// 3. MAIN PAGE SECTIONS
+// ==========================================
+
+export function Hero({ onReveal }: { onReveal: () => void }) {
+  const [revealed, setRevealed] = useState(false);
+
+  const handleReveal = () => {
+    setRevealed(true);
+    onReveal();
+  };
+
+  return (
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-16">
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
+        <div className="mb-6 flex items-center justify-center gap-3">
+          <span className="pulse-heart text-6xl md:text-7xl">💖</span>
+          <span className="pulse-heart text-7xl md:text-8xl" style={{ animationDelay: '0.3s' }}>
+            💕
+          </span>
+          <span className="pulse-heart text-6xl md:text-7xl" style={{ animationDelay: '0.6s' }}>
+            💖
+          </span>
+        </div>
+
+        <h1 className="script-font text-6xl font-bold leading-tight gradient-text md:text-8xl">
+          For My Beautiful Sara
+        </h1>
+
+        <p className="script-font mt-3 text-3xl text-pink-700 md:text-4xl">
+          with all my love, always
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-3xl">
+          <span className="wiggle">🌀</span>
+          <span className="rounded-full bg-white/70 px-4 py-2 text-base font-semibold text-pink-700 shadow">
+            Curly hair
+          </span>
+          <span className="rounded-full bg-white/70 px-4 py-2 text-base font-semibold text-pink-700 shadow">
+            ☕ Coffee lover
+          </span>
+          <span className="rounded-full bg-white/70 px-4 py-2 text-base font-semibold text-pink-700 shadow">
+            🧬 Biology girl
+          </span>
+          <span className="rounded-full bg-white/70 px-4 py-2 text-base font-semibold text-pink-700 shadow">
+            🥐 Croissant queen
+          </span>
+          <span className="rounded-full bg-white/70 px-4 py-2 text-base font-semibold text-pink-700 shadow">
+            🎂 Born 14/9/2003
+          </span>
+        </div>
+
+        <p className="script-font mx-auto mt-8 max-w-2xl text-2xl text-pink-700 md:text-3xl">
+          Sara, my love — I made this whole world for you, just to say...
+        </p>
+
+        <button
+          onClick={handleReveal}
+          className={`love-button mt-8 rounded-full px-10 py-4 text-2xl font-bold text-white transition-opacity ${
+            revealed ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+        >
+          Tap to feel my heart 💝
+        </button>
+
+        {revealed && (
+          <div className="mt-4">
+            <p className="script-font text-5xl font-bold text-rose-600 md:text-6xl">
+              I LOVE YOU SO MUCH 💗
+            </p>
+            <p className="mt-2 text-2xl text-pink-600">and I miss you every second 🥺</p>
+          </div>
+        )}
+
+        <div className="mt-12 flex flex-col items-center gap-2 text-pink-500">
+          <span className="text-sm">scroll down for more love ↓</span>
+          <span className="pulse-heart text-2xl">💖</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MoodCheck() {
+  const [mood, setMood] = useState<string | null>(null);
+
+  return (
+    <div className="glass mx-auto max-w-2xl rounded-3xl p-8 shadow-2xl">
+      <h3 className="script-font text-center text-4xl font-bold gradient-text">
+        🌸 How is Sara Today? 🌸
+      </h3>
+      <p className="mt-2 text-center text-pink-600">
+        Tell Zana how you're feeling 💕
+      </p>
+
+      <div className="mt-6 grid grid-cols-4 gap-3 sm:grid-cols-4">
+        {MOODS.map((m) => (
+          <button
+            key={m.label}
+            onClick={() => setMood(m.label)}
+            className={`hover-grow rounded-2xl bg-gradient-to-br ${m.color} p-3 text-center shadow-md transition-all ${
+              mood === m.label ? "ring-4 ring-rose-400" : ""
+            }`}
+          >
+            <div className="text-4xl">{m.emoji}</div>
+            <div className="mt-1 text-xs font-bold text-pink-700">{m.label}</div>
+          </button>
+        ))}
+      </div>
+
+      {mood && (
+        <div className="mt-6 rounded-2xl bg-white/80 p-5 shadow-inner">
+          <p className="text-center text-lg font-semibold text-pink-700">
+            You picked: <span className="text-2xl">{mood}</span>
+          </p>
+          <div className="mt-3 rounded-xl bg-gradient-to-r from-pink-50 to-rose-100 p-4 text-pink-700">
+            <p className="text-lg font-semibold">💖 Zana says:</p>
+            <p className="script-font mt-1 text-xl text-rose-600">
+              {ZANA_RESPONSES[Math.floor(Math.random() * ZANA_RESPONSES.length)]}
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function CarePackage() {
+  const [opened, setOpened] = useState(false);
+  const [step, setStep] = useState(0);
+
+  return (
+    <div className="glass mx-auto max-w-2xl rounded-3xl p-8 shadow-2xl">
+      <h3 className="script-font text-center text-4xl font-bold gradient-text">
+        💝 Zana's Care Package 💝
+      </h3>
+      <p className="mt-2 text-center text-pink-600">
+        For my Sara who always gets cold (even in summer!) 🥺
+      </p>
+
+      {!opened ? (
+        <div className="mt-6 flex flex-col items-center">
+          <button
+            onClick={() => setOpened(true)}
+            className="drift text-9xl transition-transform hover:scale-110"
+          >
+            🎁
+          </button>
+          <p className="mt-4 script-font text-2xl text-pink-700">Tap to open your gift 💖</p>
+        </div>
+      ) : (
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {CARE_ITEMS.map((item, i) => (
+            <div
+              key={i}
+              onMouseEnter={() => setStep(i)}
+              className="hover-grow cursor-pointer rounded-2xl bg-white/80 p-4 text-center shadow-md"
+            >
+              <div className="text-5xl">{item.emoji}</div>
+              <p className="mt-2 font-bold text-pink-700">{item.label}</p>
+              {step === i && (
+                <p className="mt-1 text-sm text-pink-500 italic">
+                  {item.message}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {opened && (
+        <p className="mt-6 text-center text-lg text-pink-600">
+          💕 Whenever you feel cold, just remember: I am hugging you from far away 💕
+        </p>
+      )}
+    </div>
+  );
+}
+
+export function Countdown() {
+  const [time, setTime] = useState(timeUntilBirthday());
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(timeUntilBirthday()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="glass mx-auto max-w-3xl rounded-3xl p-8 shadow-2xl">
+      <h3 className="script-font text-center text-4xl font-bold gradient-text">
+        🎂 Countdown to Sara's Birthday 🎂
+      </h3>
+      <p className="mt-2 text-center text-pink-600">
+        September 14 — the most magical day of the year 💖
+      </p>
+
+      <div className="mt-6 grid grid-cols-4 gap-3">
+        {[
+          { label: 'Days', value: time.days },
+          { label: 'Hours', value: time.hours },
+          { label: 'Minutes', value: time.minutes },
+          { label: 'Seconds', value: time.seconds },
+        ].map((u, i) => (
+          <div
+            key={i}
+            className="rounded-2xl bg-gradient-to-br from-pink-100 to-rose-200 p-4 text-center shadow-md"
+          >
+            <div className="text-4xl font-bold text-pink-700 md:text-5xl">
+              {String(u.value).padStart(2, '0')}
+            </div>
+            <div className="mt-1 text-sm font-semibold uppercase tracking-wider text-pink-500">
+              {u.label}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-6 text-center text-pink-600">
+        ✨ My Sara, born in 2003 — every year you grow more beautiful ✨
+      </p>
+    </div>
+  );
+}
+
+export function FortuneCookie() {
+  const [fortune, setFortune] = useState<string | null>(null);
+  const [cracking, setCracking] = useState(false);
+
+  const crack = () => {
+    setCracking(true);
+    setTimeout(() => {
+      setFortune(FORTUNES[Math.floor(Math.random() * FORTUNES.length)]);
+      setCracking(false);
+    }, 800);
+  };
+
+  const reset = () => {
+    setFortune(null);
+  };
+
+  return (
+    <div className="glass mx-auto max-w-xl rounded-3xl p-8 text-center shadow-2xl">
+      <h3 className="script-font text-4xl font-bold gradient-text">
+        🥠 Love Fortune Cookie
+      </h3>
+      <p className="mt-2 text-pink-600">Crack open a love message from Zana 💕</p>
+
+      <div className="mt-6 flex flex-col items-center">
+        <button
+          onClick={fortune ? reset : crack}
+          disabled={cracking}
+          className={`text-8xl transition-transform ${cracking ? "shake-it" : "hover:scale-110"}`}
+        >
+          🥠
+        </button>
+        {!fortune && !cracking && (
+          <p className="mt-3 script-font text-xl text-pink-700">Tap the cookie 💖</p>
+        )}
+        {cracking && <p className="mt-3 text-xl text-pink-600">Cracking love... 💕</p>}
+      </div>
+
+      {fortune && (
+        <div className="mt-6 rounded-2xl bg-white/80 p-6 text-2xl font-semibold text-pink-700 shadow-inner">
+          ✨ {fortune} ✨
+          <div className="mt-4 text-3xl">💖</div>
+          <button
+            onClick={reset}
+            className="love-button mt-3 rounded-full px-5 py-2 text-base font-bold text-white"
+          >
+            Crack Another 💕
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function HeartCatcher() {
+  const [hearts, setHearts] = useState<any[]>([]);
+  const [score, setScore] = useState(0);
+  const [missed, setMissed] = useState(0);
+  const [time, setTime] = useState(30);
+  const [running, setRunning] = useState(false);
+  const [finished, setFinished] = useState(false);
+  const idRef = useRef(0);
+  const tickRef = useRef(0);
+
+  const start = () => {
+    setHearts([]);
+    setScore(0);
+    setMissed(0);
+    setTime(30);
+    setRunning(true);
+    setFinished(false);
+    idRef.current = 0;
+  };
+
+  useEffect(() => {
+    if (!running) return;
+    const spawn = setInterval(() => {
+      setHearts((prev) => {
+        const newHearts = [...prev];
+        if (newHearts.length < 8) {
+          newHearts.push({
+            id: idRef.current++,
+            x: Math.random() * 90 + 5,
+            y: 0,
+            size: 30 + Math.random() * 24,
+            speed: 0.5 + Math.random() * 0.8,
+            caught: false,
+            emoji: CATCHER_EMOJIS[Math.floor(Math.random() * CATCHER_EMOJIS.length)],
+          });
+        }
+        return newHearts.map((h) =>
+          h.caught ? h : { ...h, y: h.y + h.speed }
+        ).filter((h) => {
+          if (h.y >= 95 && !h.caught) {
+            setMissed((m) => m + 1);
+            return false;
           }
-        },350);
-      } else {
-        setTimeout(()=>{
-          a.el.classList.remove('flip');b.el.classList.remove('flip');
-          a.el.textContent='?';b.el.textContent='?';
-          flipped=[];lock=false;
-        },800);
-      }
-    }
-  }
-  resetBtn.addEventListener('click',build);
-  build();
-})();
-/* ---------- Hug & Kiss counters ---------- */
-(function(){
-  let hugs=0,kisses=0;
-  const hc=document.getElementById('hugCount'),kc=document.getElementById('kissCount');
-  document.getElementById('hugBtn').addEventListener('click',function(){
-    hugs++;hc.textContent=hugs;
-    spawnFloat(this,'🤗');
-  });
-  document.getElementById('kissBtn').addEventListener('click',function(){
-    kisses++;kc.textContent=kisses;
-    spawnFloat(this,'💋');
-  });
-  function spawnFloat(el,emo){
-    const f=document.createElement('div');
-    f.textContent=emo;
-    f.style.cssText='position:fixed;font-size:36px;pointer-events:none;z-index:99;transition:all 1s;';
-    const r=el.getBoundingClientRect();
-    f.style.left=(r.left+r.width/2-18)+'px';
-    f.style.top=(r.top)+'px';
-    document.body.appendChild(f);
-    requestAnimationFrame(()=>{
-      f.style.top=(r.top-120)+'px';
-      f.style.opacity='0';
-      f.style.transform='scale(1.8)';
-    });
-    setTimeout(()=>f.remove(),1000);
-  }
-})();
-/* ---------- Heart Catcher ---------- */
-(function(){
-  const box=document.getElementById('catcher');
-  const scoreEl=document.getElementById('catchScore');
-  const timeEl=document.getElementById('catchTime');
-  const startBtn=document.getElementById('catchStart');
-  let score=0,time=20,running=false,spawnT,tickT;
-  const heartEmo=['💖','💕','💗','💓','💘','🌸'];
-  function spawn(){
-    const h=document.createElement('div');
-    h.className='falling';
-    h.textContent=heartEmo[Math.floor(Math.random()*heartEmo.length)];
-    h.style.left=(Math.random()*90+5)+'%';
-    h.style.top='-40px';
-    h.style.animationDuration=(2+Math.random()*2)+'s';
-    h.addEventListener('click',function(e){
-      e.stopPropagation();
-      score++;scoreEl.textContent=score;
-      h.remove();
-    });
-    box.appendChild(h);
-    setTimeout(()=>h.remove(),4500);
-  }
-  startBtn.addEventListener('click',function(){
-    if(running)return;
-    running=true;score=0;time=20;
-    scoreEl.textContent=0;timeEl.textContent=20;
-    startBtn.disabled=true;startBtn.style.opacity='.6';
-    spawnT=setInterval(spawn,500);
-    tickT=setInterval(()=>{
-      time--;timeEl.textContent=time;
-      if(time<=0){
-        clearInterval(spawnT);clearInterval(tickT);
-        running=false;startBtn.disabled=false;startBtn.style.opacity='1';
-        box.querySelectorAll('.falling').forEach(n=>n.remove());
-        confettiBurst();
-        setTimeout(()=>alert('💖 You caught '+score+' hearts for Sara! 🥰\nShe deserves a million more!'),200);
-      }
-    },1000);
-  });
-})();
-</script>
-</body>
-</html>
+          return true;
+        });
+      });
+    }, 400);
+    const tick = setInterval(() => {
+      setTime((t) => {
+        tickRef.current += 1;
+        if (t <= 1) {
+          setRunning(false);
+          setFinished(true);
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    return () => {
+      clearInterval(spawn);
+      clearInterval(tick);
+    };
+  }, [running]);
+
+  const catchHeart = (id: number) => {
+    setHearts((prev) =>
+      prev.map((h) => (h.id === id ? { ...h, caught: true } : h))
+    );
+    setScore((s) => s + 1);
+  };
+
+  return (
+    <div className="glass mx-auto max-w-2xl overflow-hidden rounded-3xl p-6 shadow-2xl">
+      <h3 className="script-font text-center text-4xl font-bold gradient-text">
+        💖 Catch My Love 💖
+      </h3>
+      <p className="mt-2 text-center text-pink-600">
+        Click the falling hearts to catch my love! 💕
+      </p>
+
+      <div className="mt-4 flex items-center justify-between rounded-2xl bg-white/60 p-3 text-pink-700">
+        <div className="text-lg font-semibold">⏱️ {time}s</div>
+        <div className="text-lg font-semibold">💖 {score}</div>
+        <div className="text-lg font-semibold">💔 {missed}</div>
+      </div>
+
+      <div className="relative mt-3 h-96 w-full overflow-hidden rounded-2xl bg-gradient-to-b from-pink-50 to-rose-100">
+        {hearts.map((h) =>
+          h.caught ? (
+            <div
+              key={h.id}
+              className="absolute heart-float"
+              style={{
+                left: `${h.x}%`,
+                top: `${h.y}%`,
+                fontSize: `${h.size}px`,
+                animationDuration: '0.8s',
+                ['--drift' as any]: '0px',
+              }}
+            >
+              ✨
+            </div>
+          ) : (
+            <button
+              key={h.id}
+              onClick={() => catchHeart(h.id)}
+              className="absolute transition-transform hover:scale-110"
+              style={{
+                left: `${h.x}%`,
+                top: `${h.y}%`,
+                fontSize: `${h.size}px`,
+              }}
+            >
+              {h.emoji}
+            </button>
+          )
+        )}
+        {finished && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur">
+            <div className="text-7xl heartbeat">🏆</div>
+            <h4 className="script-font mt-3 text-4xl font-bold text-pink-700">
+              Time's up, my love!
+            </h4>
+            <p className="mt-2 text-2xl text-pink-600">
+              You caught <span className="text-4xl font-bold text-rose-500">{score}</span> hearts 💕
+            </p>
+            <p className="mt-2 text-pink-500">
+              {score >= 15 ? "You're a love-catching queen! 👑" : "Cute try, my Sara! 💖"}
+            </p>
+            <button
+              onClick={start}
+              className="love-button mt-4 rounded-full px-6 py-2 text-lg font-bold text-white"
+            >
+              Play Again 💖
+            </button>
+          </div>
+        )}
+        {!running && !finished && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur">
+            <div className="text-6xl">💝</div>
+            <h4 className="script-font mt-3 text-3xl font-bold text-pink-700">
+              Ready to catch my love?
+            </h4>
+            <p className="mt-2 px-4 text-center text-pink-600">
+              Click as many falling hearts as you can in 30 seconds!
+            </p>
+            <button
+              onClick={start}
+              className="love-button mt-4 rounded-full px-6 py-3 text-xl font-bold text-white"
+            >
+              Start Game 💖
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export function Ender() {
+  return (
+    <section className="relative px-4 py-20">
+      <div className="glass mx-auto max-w-3xl rounded-3xl p-10 text-center shadow-2xl">
+        <div className="text-8xl heartbeat">💖</div>
+        <h2 className="script-font mt-4 text-5xl font-bold gradient-text md:text-6xl">
+          Sara, My Love
+        </h2>
+        <p className="script-font mt-4 text-3xl text-pink-700">I love you more than anything 💗</p>
+
+        <div className="mt-6 flex justify-center gap-3 text-5xl">
+          <span className="pulse-heart">💋</span>
+          <span className="pulse-heart" style={{ animationDelay: '0.2s' }}>🤗</span>
+          <span className="pulse-heart" style={{ animationDelay: '0.4s' }}>💝</span>
+          <span className="pulse-heart" style={{ animationDelay: '0.6s' }}>🌹</span>
+          <span className="pulse-heart" style={{ animationDelay: '0.8s' }}>💖</span>
+        </div>
+
+        <div className="mt-8 rounded-2xl bg-gradient-to-r from-pink-100 to-rose-200 p-6 text-xl leading-relaxed text-pink-800 shadow-inner">
+          <p>
+            To my Sara, my curly-haired coffee-loving biology girl,
+            <br />
+            who catches a cold in summer and whose favorite treat is a warm croissant.
+            <br />
+            <br />
+            <span className="script-font text-2xl text-rose-600">
+              You are my favorite hello and my hardest goodbye.
+            </span>
+            <br />
+            <br />
+            I love you. I miss you. I choose you — today, tomorrow, and every day after.
+          </p>
+        </div>
+
+        <p className="script-font mt-8 text-3xl text-rose-600">
+          — Forever yours, Zana 💖
+        </p>
+      </div>
+    </section>
+  );
+}
+
+// ==========================================
+// 4. MAIN INTEGRATED COMPONENT
+// ==========================================
+
+export default function App() {
+  const [isConfettiActive, setIsConfettiActive] = useState(false);
+
+  const triggerConfetti = () => {
+    setIsConfettiActive(true);
+    // Automatically turn off confetti tracker state after animation completes
+    setTimeout(() => setIsConfettiActive(false), 8500);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-rose-50 via-pink-100 to-rose-100 text-slate-800 antialiased relative">
+      {/* Background Ambience */}
+      <HeartRain count={30} active={true} />
+      <Confetti active={isConfettiActive} count={100} />
+      <MissingMeter />
+
+      {/* Hero Section */}
+      <Hero onReveal={triggerConfetti} />
+
+      {/* Main Interactive Grid Layout */}
+      <main className="mx-auto max-w-6xl px-4 py-12 space-y-16 relative z-10">
+        <section className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <MoodCheck />
+          <CarePackage />
+        </section>
+
+        <section>
+          <Countdown />
+        </section>
+
+        <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 items-start">
+          <FortuneCookie />
+          <HeartCatcher />
+        </section>
+      </main>
+
+      {/* Letter / Closing Section */}
+      <Ender />
+    </div>
+  );
+}
