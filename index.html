@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="A love letter from Zana to Sara 💖" />
+<title>For My Sara 💖 From Zana</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💖%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Quicksand',system-ui,sans-serif;color:#4a1942;background:linear-gradient(135deg,#fff1f5 0%,#ffe4ec 50%,#f3e8ff 100%);overflow-x:hidden;scroll-behavior:smooth}
+  .script{font-family:'Dancing Script',cursive}
+  .gradient-text{background:linear-gradient(90deg,#ec4899,#f43f5e,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent}
+  /* Floating hearts background */
+  .bg-hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .bg-hearts span{position:absolute;font-size:22px;opacity:.5;animation:floatUp linear infinite}
+  @keyframes floatUp{0%{transform:translateY(100vh) rotate(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) rotate(360deg);opacity:0}}
+  /* Layout */
+  main{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:40px 20px 80px}
+  section{margin:60px 0}
+  .card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border:1px solid rgba(244,114,182,.25);border-radius:28px;padding:32px;box-shadow:0 20px 50px -20px rgba(236,72,153,.25)}
+  /* Hero */
+  .hero{text-align:center;padding:60px 20px 20px}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;padding:8px 18px;border-radius:999px;box-shadow:0 8px 20px -10px rgba(236,72,153,.4);font-weight:600;color:#be185d;margin-bottom:24px}
+  .hero h1{font-size:clamp(42px,8vw,84px);line-height:1.05;margin-bottom:16px}
+  .hero p.sub{font-size:clamp(20px,3vw,28px);color:#be185d;font-weight:500}
+  .hero .big-heart{font-size:80px;animation:beat 1.2s ease-in-out infinite;display:inline-block}
+  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .btn{padding:14px 28px;border-radius:999px;font-weight:700;font-size:16px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .btn:active{transform:scale(.96)}
+  .btn-primary{background:linear-gradient(90deg,#ec4899,#f43f5e);color:#fff;box-shadow:0 10px 25px -8px rgba(236,72,153,.6)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:#fff;color:#be185d;border:2px solid #fbcfe8}
+  /* Letter */
+  .letter p{font-size:18px;line-height:1.8;margin-bottom:14px;color:#500724}
+  .letter .greet{font-size:26px;font-weight:700;color:#9d174d;margin-bottom:16px}
+  .letter .sign{text-align:right;font-size:22px;font-weight:700;color:#be185d;margin-top:20px;padding-top:16px;border-top:2px dashed #fbcfe8}
+  /* Favorites grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+  .fav{background:linear-gradient(135deg,#fff,#fce7f3);border-radius:20px;padding:22px;text-align:center;border:1px solid #fbcfe8;transition:transform .2s}
+  .fav:hover{transform:translateY(-4px) rotate(-1deg)}
+  .fav .ico{font-size:40px;display:block;margin-bottom:8px}
+  .fav .lbl{font-weight:700;color:#9d174d}
+  /* Countdown */
+  .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+  .cd-box{background:linear-gradient(135deg,#ec4899,#a855f7);color:#fff;border-radius:18px;padding:16px 8px;text-align:center}
+  .cd-box .n{font-size:32px;font-weight:800;display:block}
+  .cd-box .l{font-size:12px;opacity:.9;text-transform:uppercase;letter-spacing:1px}
+  /* Quiz */
+  .quiz-q{font-size:22px;text-align:center;font-weight:600;color:#500724;margin:20px 0 30px;min-height:60px}
+  .quiz-btns{position:relative;display:flex;gap:16px;justify-content:center;align-items:center;min-height:80px;flex-wrap:wrap}
+  .yes-btn{background:linear-gradient(90deg,#ec4899,#f43f5e);color:#fff;padding:14px 36px;border-radius:999px;font-weight:700;font-size:18px;border:none;cursor:pointer;box-shadow:0 10px 25px -8px rgba(236,72,153,.6);transition:transform .15s}
+  .yes-btn:hover{transform:scale(1.05)}
+  .no-btn{background:#e5e7eb;color:#6b7280;padding:14px 36px;border-radius:999px;font-weight:700;font-size:18px;border:none;cursor:not-allowed;transition:all .2s}
+  .progress{height:8px;background:#fce7f3;border-radius:999px;overflow:hidden;margin-bottom:20px}
+  .progress > div{height:100%;background:linear-gradient(90deg,#ec4899,#a855f7);transition:width .4s}
+  /* Memory game */
+  .mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+  .mem-card{aspect-ratio:1;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:36px;background:linear-gradient(135deg,#fbcfe8,#f9a8d4);cursor:pointer;transition:transform .3s,background .3s;border:none;user-select:none}
+  .mem-card.flip{background:linear-gradient(135deg,#ec4899,#a855f7);transform:rotateY(180deg)}
+  .mem-card.match{background:linear-gradient(135deg,#86efac,#4ade80);opacity:.7;cursor:default}
+  .mem-card .back{transform:rotateY(180deg)}
+  .mem-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+  /* Hug/Kiss counter */
+  .counters{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .counter-btn{padding:30px 10px;border-radius:22px;border:none;cursor:pointer;color:#fff;font-weight:700;font-size:18px;transition:transform .1s;box-shadow:0 10px 25px -10px rgba(0,0,0,.3)}
+  .counter-btn:active{transform:scale(.92)}
+  .hug-btn{background:linear-gradient(135deg,#fb923c,#f43f5e)}
+  .kiss-btn{background:linear-gradient(135deg,#ec4899,#a855f7)}
+  .counter-btn .emo{font-size:48px;display:block;margin-bottom:6px}
+  .count-num{font-size:36px;font-weight:800;text-align:center;margin-top:10px;color:#9d174d}
+  /* Heart catcher */
+  .catcher{position:relative;height:360px;background:linear-gradient(180deg,#fce7f3,#fbcfe8);border-radius:22px;overflow:hidden;border:2px dashed #f9a8d4;cursor:crosshair}
+  .falling{position:absolute;font-size:32px;user-select:none;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(400px)}}
+  .catch-score{position:absolute;top:10px;left:12px;background:#fff;padding:6px 14px;border-radius:999px;font-weight:700;color:#be185d;z-index:2}
+  .catch-time{position:absolute;top:10px;right:12px;background:#fff;padding:6px 14px;border-radius:999px;font-weight:700;color:#be185d;z-index:2}
+  /* Confetti */
+  .confetti{position:fixed;top:-30px;font-size:28px;pointer-events:none;z-index:999;animation:confettiFall linear forwards}
+  @keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg)}}
+  /* Footer */
+  footer{text-align:center;padding:40px 20px;color:#be185d;font-size:14px}
+  footer .emojis{font-size:24px;margin-top:10px;letter-spacing:6px}
+  /* Success screen */
+  .success{background:linear-gradient(135deg,#ec4899,#f43f5e);color:#fff;text-align:center;padding:40px 20px;border-radius:28px;box-shadow:0 20px 50px -20px rgba(236,72,153,.6)}
+  .success h2{font-size:36px;margin-bottom:12px}
+  .success .big{font-size:72px;margin-bottom:16px}
+  h2.section-title{font-size:32px;text-align:center;margin-bottom:8px;color:#500724}
+  p.section-sub{text-align:center;color:#be185d;margin-bottom:24px}
+  @media (max-width:500px){.mem-grid{grid-template-columns:repeat(3,1fr)}.countdown{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="bg-hearts" id="bgHearts"></div>
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">🎂 Born September 14, 2003 • Biology Queen 👑</div>
+    <div class="big-heart">💖</div>
+    <h1 class="script gradient-text">Dear Sara,<br>I Love You</h1>
+    <p class="sub">Forever & always — your Zana 💕</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#quiz">Play our love game 💘</a>
+      <a class="btn btn-ghost" href="#games">Fun & games 🎮</a>
+    </div>
+  </section>
+  <!-- LOVE LETTER -->
+  <section>
+    <h2 class="section-title script">My Love Letter 💌</h2>
+    <p class="section-sub">Every word is true, Sara</p>
+    <div class="card letter">
+      <p class="greet script">My beautiful Sara with the most gorgeous curly hair 🌸</p>
+      <p>I love you so, so much. I miss you every single moment of every single day. Every second without you feels like forever.</p>
+      <p>I love spending every moment with you. I love kissing you so much 💋 — your lips are my favorite place in the whole world. And hugs? I want to hug you every time I see you, hold you close, and never let go 🤗.</p>
+      <p>I love that you're a biology student 🔬 — you're so smart and I'm proud of you. I love that you love coffee so much ☕ (I'll make you one every morning). I love that you love croissants 🥐 — we'll share them together.</p>
+      <p>I even love that you get cold in the middle of summer 🥶 — it gives me an excuse to hold you tighter and warm you up.</p>
+      <p>Happy early birthday, my September 14 baby 🎂. You are my everything.</p>
+      <p class="sign script">Yours forever,<br>Zana ❤️</p>
+    </div>
+  </section>
+  <!-- SARA'S FAVORITES -->
+  <section>
+    <h2 class="section-title">Things I Adore About You 🌟</h2>
+    <p class="section-sub">Every little detail makes me love you more</p>
+    <div class="grid">
+      <div class="fav"><span class="ico">☕</span><div class="lbl">Coffee Addict</div></div>
+      <div class="fav"><span class="ico">🥐</span><div class="lbl">Croissant Lover</div></div>
+      <div class="fav"><span class="ico">🔬</span><div class="lbl">Biology Queen</div></div>
+      <div class="fav"><span class="ico">🌀</span><div class="lbl">Curly Hair Angel</div></div>
+      <div class="fav"><span class="ico">🥶</span><div class="lbl">Cold in Summer</div></div>
+      <div class="fav"><span class="ico">🎂</span><div class="lbl">Sept 14, 2003</div></div>
+      <div class="fav"><span class="ico">💋</span><div class="lbl">Best Kisses</div></div>
+      <div class="fav"><span class="ico">🤗</span><div class="lbl">Warmest Hugs</div></div>
+    </div>
+  </section>
+  <!-- BIRTHDAY COUNTDOWN -->
+  <section>
+    <h2 class="section-title script">Countdown to Your Birthday 🎂</h2>
+    <p class="section-sub">September 14 — the best day of the year</p>
+    <div class="card">
+      <div class="countdown" id="countdown">
+        <div class="cd-box"><span class="n" id="cd-d">0</span><span class="l">Days</span></div>
+        <div class="cd-box"><span class="n" id="cd-h">0</span><span class="l">Hours</span></div>
+        <div class="cd-box"><span class="n" id="cd-m">0</span><span class="l">Minutes</span></div>
+        <div class="cd-box"><span class="n" id="cd-s">0</span><span class="l">Seconds</span></div>
+      </div>
+    </div>
+  </section>
+  <!-- LOVE QUIZ -->
+  <section id="quiz">
+    <h2 class="section-title">Love Quiz 💕</h2>
+    <p class="section-sub">Try saying no... I dare you 😏</p>
+    <div class="card" id="quizCard">
+      <div class="progress"><div id="quizProg" style="width:20%"></div></div>
+      <div style="text-align:center;color:#be185d;font-weight:600" id="quizStep">Question 1 of 5</div>
+      <div class="quiz-q" id="quizQ">Do you love your boyfriend Zana? 💕</div>
+      <div class="quiz-btns">
+        <button class="yes-btn" id="yesBtn">YES 💖</button>
+        <button class="no-btn" id="noBtn">No 😢</button>
+      </div>
+      <p style="text-align:center;margin-top:18px;color:#f472b6;font-size:14px">Psst... the "No" button doesn't work. You already know the answer 😉</p>
+    </div>
+  </section>
+  <!-- GAMES -->
+  <section id="games">
+    <h2 class="section-title">Games Just for Us 🎮</h2>
+    <p class="section-sub">Because love should be fun</p>
+    <!-- Memory -->
+    <div class="card" style="margin-bottom:24px">
+      <div class="mem-head">
+        <div>
+          <h3 style="color:#500724;font-size:22px">🧠 Memory Match</h3>
+          <p style="color:#be185d;font-size:14px">Moves: <span id="memMoves">0</span> • Matched: <span id="memMatched">0</span>/6</p>
+        </div>
+        <button class="btn btn-ghost" id="memReset">Reset</button>
+      </div>
+      <div class="mem-grid" id="memGrid"></div>
+    </div>
+    <!-- Hug & Kiss counters -->
+    <div class="card" style="margin-bottom:24px">
+      <h3 style="text-align:center;color:#500724;font-size:22px;margin-bottom:16px">Send Sara Love 💝</h3>
+      <div class="counters">
+        <div>
+          <button class="counter-btn hug-btn" id="hugBtn"><span class="emo">🤗</span>HUG HER</button>
+          <div class="count-num" id="hugCount">0</div>
+          <p style="text-align:center;color:#f472b6;font-size:13px">hugs sent</p>
+        </div>
+        <div>
+          <button class="counter-btn kiss-btn" id="kissBtn"><span class="emo">💋</span>KISS HER</button>
+          <div class="count-num" id="kissCount">0</div>
+          <p style="text-align:center;color:#f472b6;font-size:13px">kisses sent</p>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:16px;color:#be185d;font-size:14px">Every one of these is for my beautiful curly-haired Sara 🌸</p>
+    </div>
+    <!-- Heart catcher -->
+    <div class="card">
+      <div class="mem-head">
+        <div>
+          <h3 style="color:#500724;font-size:22px">💘 Catch the Hearts!</h3>
+          <p style="color:#be185d;font-size:14px">Tap the falling hearts in 20 seconds</p>
+        </div>
+        <button class="btn btn-primary" id="catchStart">Start</button>
+      </div>
+      <div class="catcher" id="catcher">
+        <div class="catch-score">💖 <span id="catchScore">0</span></div>
+        <div class="catch-time">⏱ <span id="catchTime">20</span>s</div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>Made with endless love by <b>Zana</b> for <b>Sara</b> 💖</p>
+    <p style="margin-top:6px">September 14 forever in my heart</p>
+    <div class="emojis">💕  ☕ 💋 🤗 🌸</div>
+  </footer>
+</main>
+<script>
+/* ---------- Floating background hearts ---------- */
+(function(){
+  const bg = document.getElementById('bgHearts');
+  const emo = ['💕','💖','💗','💓','','💘'];
+  for(let i=0;i<20;i++){
+    const s = document.createElement('span');
+    s.textContent = emo[i%emo.length];
+    s.style.left = Math.random()*100+'%';
+    s.style.animationDuration = (8+Math.random()*10)+'s';
+    s.style.animationDelay = (Math.random()*10)+'s';
+    s.style.fontSize = (16+Math.random()*22)+'px';
+    bg.appendChild(s);
+  }
+})();
+/* ---------- Confetti burst ---------- */
+function confettiBurst(){
+  const emos=['💕','🌸','','☕','💖','💋','✨'];
+  for(let i=0;i<40;i++){
+    const c=document.createElement('div');
+    c.className='confetti';
+    c.textContent=emos[i%emos.length];
+    c.style.left=Math.random()*100+'vw';
+    c.style.animationDuration=(2+Math.random()*2)+'s';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+/* ---------- Birthday countdown to Sept 14 ---------- */
+(function(){
+  function tick(){
+    const now=new Date();
+    let y=now.getFullYear();
+    let target=new Date(y,8,14,0,0,0); // month 8 = Sept
+    if(target<now){target=new Date(y+1,8,14,0,0,0)}
+    const diff=target-now;
+    const d=Math.floor(diff/86400000);
+    const h=Math.floor(diff/3600000)%24;
+    const m=Math.floor(diff/60000)%60;
+    const s=Math.floor(diff/1000)%60;
+    document.getElementById('cd-d').textContent=d;
+    document.getElementById('cd-h').textContent=h;
+    document.getElementById('cd-m').textContent=m;
+    document.getElementById('cd-s').textContent=s;
+  }
+  tick();setInterval(tick,1000);
+})();
+/* ---------- Love Quiz with runaway NO button ---------- */
+(function(){
+  const questions=[
+    "Do you love your boyfriend Zana? 💕",
+    "Do you miss him as much as he misses you? 🥺",
+    "Do you want endless hugs and kisses? 🤗💋",
+    "Is Zana the luckiest guy in the world to have you? 🌟",
+    "Will you be his forever and ever? 💍"
+  ];
+  let idx=0;
+  const qEl=document.getElementById('quizQ');
+  const stepEl=document.getElementById('quizStep');
+  const progEl=document.getElementById('quizProg');
+  const yesBtn=document.getElementById('yesBtn');
+  const noBtn=document.getElementById('noBtn');
+  const card=document.getElementById('quizCard');
+  function render(){
+    qEl.textContent=questions[idx];
+    stepEl.textContent='Question '+(idx+1)+' of '+questions.length;
+    progEl.style.width=(((idx+1)/questions.length)*100)+'%';
+    noBtn.style.position='';noBtn.style.left='';noBtn.style.top='';
+  }
+  function runAway(){
+    const rect=card.getBoundingClientRect();
+    const maxX=rect.width-noBtn.offsetWidth-40;
+    const maxY=140;
+    const x=Math.random()*maxX;
+    const y=Math.random()*maxY;
+    noBtn.style.position='absolute';
+    noBtn.style.left=x+'px';
+    noBtn.style.top=(60+y)+'px';
+    // tiny taunt
+    const taunts=["Nope 😏","Can't click me!","Try again 💕","No is not an option!","Hehe 🥰"];
+    noBtn.textContent=taunts[Math.floor(Math.random()*taunts.length)];
+  }
+  noBtn.addEventListener('mouseenter',runAway);
+  noBtn.addEventListener('mouseover',runAway);
+  noBtn.addEventListener('touchstart',function(e){e.preventDefault();runAway();},{passive:false});
+  noBtn.addEventListener('click',function(e){e.preventDefault();runAway();});
+  yesBtn.addEventListener('click',function(){
+    yesBtn.textContent='💖 YES! ';
+    confettiBurst();
+    setTimeout(()=>{
+      if(idx<questions.length-1){
+        idx++;render();yesBtn.textContent='YES 💖';
+      } else {
+        // success screen
+        card.outerHTML='<div class="success"><div class="big">🎉💕🎉</div><h2 class="script">You said YES to everything!</h2><p style="font-size:20px;opacity:.95;margin-top:8px">Just like I knew you would, my perfect Sara.<br>I love you endlessly! — Zana 💖</p></div>';
+        confettiBurst();
+        setTimeout(confettiBurst,800);
+      }
+    },700);
+  });
+  render();
+})();
+/* ---------- Memory Match Game ---------- */
+(function(){
+  const emojis=['☕','🥐','🔬','🌀','💋','🤗'];
+  const grid=document.getElementById('memGrid');
+  const movesEl=document.getElementById('memMoves');
+  const matchedEl=document.getElementById('memMatched');
+  const resetBtn=document.getElementById('memReset');
+  let deck=[],flipped=[],matched=0,moves=0,lock=false;
+  function shuffle(a){return a.sort(()=>Math.random()-0.5)}
+  function build(){
+    grid.innerHTML='';
+    deck=shuffle([...emojis,...emojis].map((e,i)=>({e,i})));
+    flipped=[];matched=0;moves=0;lock=false;
+    movesEl.textContent=0;matchedEl.textContent=0;
+    deck.forEach((c,idx)=>{
+      const b=document.createElement('button');
+      b.className='mem-card';
+      b.dataset.idx=idx;
+      b.textContent='?';
+      b.addEventListener('click',()=>flip(idx,b));
+      grid.appendChild(b);
+    });
+  }
+  function flip(idx,el){
+    if(lock||flipped.length===2||flipped.find(f=>f.idx===idx)||el.classList.contains('match'))return;
+    el.classList.add('flip');
+    el.innerHTML='<span class="back">'+deck[idx].e+'</span>';
+    flipped.push({idx,el,emoji:deck[idx].e});
+    if(flipped.length===2){
+      moves++;movesEl.textContent=moves;lock=true;
+      const [a,b]=flipped;
+      if(a.emoji===b.emoji){
+        setTimeout(()=>{
+          a.el.classList.add('match');b.el.classList.add('match');
+          matched++;matchedEl.textContent=matched;
+          flipped=[];lock=false;
+          if(matched===emojis.length){
+            setTimeout(()=>{confettiBurst();alert('🎉 You found all our memories! Moves: '+moves+'\nJust like how we found each other 💕');},300);
+          }
+        },350);
+      } else {
+        setTimeout(()=>{
+          a.el.classList.remove('flip');b.el.classList.remove('flip');
+          a.el.textContent='?';b.el.textContent='?';
+          flipped=[];lock=false;
+        },800);
+      }
+    }
+  }
+  resetBtn.addEventListener('click',build);
+  build();
+})();
+/* ---------- Hug & Kiss counters ---------- */
+(function(){
+  let hugs=0,kisses=0;
+  const hc=document.getElementById('hugCount'),kc=document.getElementById('kissCount');
+  document.getElementById('hugBtn').addEventListener('click',function(){
+    hugs++;hc.textContent=hugs;
+    spawnFloat(this,'🤗');
+  });
+  document.getElementById('kissBtn').addEventListener('click',function(){
+    kisses++;kc.textContent=kisses;
+    spawnFloat(this,'💋');
+  });
+  function spawnFloat(el,emo){
+    const f=document.createElement('div');
+    f.textContent=emo;
+    f.style.cssText='position:fixed;font-size:36px;pointer-events:none;z-index:99;transition:all 1s;';
+    const r=el.getBoundingClientRect();
+    f.style.left=(r.left+r.width/2-18)+'px';
+    f.style.top=(r.top)+'px';
+    document.body.appendChild(f);
+    requestAnimationFrame(()=>{
+      f.style.top=(r.top-120)+'px';
+      f.style.opacity='0';
+      f.style.transform='scale(1.8)';
+    });
+    setTimeout(()=>f.remove(),1000);
+  }
+})();
+/* ---------- Heart Catcher ---------- */
+(function(){
+  const box=document.getElementById('catcher');
+  const scoreEl=document.getElementById('catchScore');
+  const timeEl=document.getElementById('catchTime');
+  const startBtn=document.getElementById('catchStart');
+  let score=0,time=20,running=false,spawnT,tickT;
+  const heartEmo=['💖','💕','💗','💓','💘','🌸'];
+  function spawn(){
+    const h=document.createElement('div');
+    h.className='falling';
+    h.textContent=heartEmo[Math.floor(Math.random()*heartEmo.length)];
+    h.style.left=(Math.random()*90+5)+'%';
+    h.style.top='-40px';
+    h.style.animationDuration=(2+Math.random()*2)+'s';
+    h.addEventListener('click',function(e){
+      e.stopPropagation();
+      score++;scoreEl.textContent=score;
+      h.remove();
+    });
+    box.appendChild(h);
+    setTimeout(()=>h.remove(),4500);
+  }
+  startBtn.addEventListener('click',function(){
+    if(running)return;
+    running=true;score=0;time=20;
+    scoreEl.textContent=0;timeEl.textContent=20;
+    startBtn.disabled=true;startBtn.style.opacity='.6';
+    spawnT=setInterval(spawn,500);
+    tickT=setInterval(()=>{
+      time--;timeEl.textContent=time;
+      if(time<=0){
+        clearInterval(spawnT);clearInterval(tickT);
+        running=false;startBtn.disabled=false;startBtn.style.opacity='1';
+        box.querySelectorAll('.falling').forEach(n=>n.remove());
+        confettiBurst();
+        setTimeout(()=>alert('💖 You caught '+score+' hearts for Sara! 🥰\nShe deserves a million more!'),200);
+      }
+    },1000);
+  });
+})();
+</script>
+</body>
+</html>
